@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans:
+    var(--font-lexend), ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-error: var(--error);
+  --color-info: var(--info);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-border: var(--border);
+}
+
+@layer base {
+  :root {
+    --background: #ffffff;
+    --foreground: #172b4d; /* Atlassian N800 */
+    --surface: #f4f5f7; /* Atlassian N20 */
+    --border: #dfe1e6; /* Atlassian N40 */
+
+    --primary: #0052cc; /* Atlassian B400 */
+    --primary-foreground: #ffffff;
+    --secondary: #ebecf0; /* Atlassian N30 */
+    --secondary-foreground: #42526e; /* Atlassian N500 */
+
+    --success: #36b37e; /* Atlassian G400 */
+    --warning: #ffab00; /* Atlassian Y400 */
+    --error: #ff5630; /* Atlassian R400 */
+    --info: #00b8d9; /* Atlassian T400 */
+    --muted: #091e420f; /* Atlassian N40 with opacity */
+    --muted-foreground: #8993a4; /* Atlassian N200 */
+  }
+
+  .dark {
+    /* Nexin "Modo Comando" - Carbon Black / Navy Blue */
+    --background: #09090b; /* Carbon Black */
+    --foreground: #ffffff;
+    --surface: #101214; /* Deep Carbon Black for cards */
+    --border: #22272b;
+
+    --primary: #00b8d9; /* Teal/Cyan Electric for dark mode CTA */
+    --primary-foreground: #091e42;
+    --secondary: #2c333a; /* Dark secondary */
+    --secondary-foreground: #b3d4ff; /* Light blue accent */
+
+    --success: #22a06b;
+    --warning: #f5cd47;
+    --error: #f15b50;
+    --info: #6cc3e0;
+    --muted: #22272b;
+    --muted-foreground: #9fadbc;
+  }
+
+  * {
+    border-color: var(--border);
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+  }
+}

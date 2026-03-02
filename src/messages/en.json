@@ -1,0 +1,31 @@
+{
+  "Index": {
+    "title": "Total control of your industry, module by module",
+    "subtitle": "Nexin (Next Industries) is the definitive digital ecosystem for the industrial sector. Robust, scalable, and from the future.",
+    "cta_primary": "Explore the Ecosystem",
+    "cta_secondary": "Learn more"
+  },
+  "Features": {
+    "title": "Ecosystem Pillars",
+    "feature1_title": "Decoupled Architecture",
+    "feature1_desc": "Modules that work independently but communicate perfectly.",
+    "feature2_title": "Central Security (Guardian)",
+    "feature2_desc": "Unified identity and access management for the entire ERP.",
+    "feature3_title": "Real-time Control",
+    "feature3_desc": "Automation and absolute visibility of all your operations."
+  },
+  "Modules": {
+    "title": "Our Systems",
+    "factory": "Production and shop floor control.",
+    "finance": "Smart financial administration.",
+    "guardian": "The security and access brain.",
+    "logistic": "Inventory and logistics management.",
+    "procurement": "Sourcing and purchasing.",
+    "vendor": "Supplier portal."
+  },
+  "Footer": {
+    "cta": "The next generation of manufacturing and business OS.",
+    "contact": "Contact Sales",
+    "rights": "© Nexin (Next Industries). All rights reserved."
+  }
+}
