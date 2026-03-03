@@ -22,9 +22,12 @@ export function Navbar({ locale }: { locale: string }) {
         
         {/* Brand */}
         <div className="flex items-center gap-6">
-          <span className="text-xl font-bold tracking-tighter text-foreground">
-            NEXIN
-          </span>
+          <a href="/" className="h-6 md:h-7 flex-shrink-0 flex items-center relative">
+            {/* Si el navbar-icon no tiene versión oscura/clara sino que es un solo archivo, lo ajustamos con CSS classes inversoras si es necesario.
+                En el caso del footer sí hay un -w y un -b. Para el nexin-logo-icon.svg original verificaremos su visibilidad normal. */}
+            <img src="/nexin-logos/svg/nexin-logo-icon.svg" alt="Nexin" className="h-full w-auto" />
+            <span className="sr-only">Nexin</span>
+          </a>
 
           {/* Apps Dropdown (for Desktop/Tablet) */}
           <div className="hidden md:flex">

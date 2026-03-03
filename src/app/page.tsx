@@ -2,6 +2,7 @@ import { useTranslations } from 'next-intl';
 import { Button } from '@/theme/components/button';
 import { Card } from '@/theme/components/card';
 import { Typography } from '@/theme/components/typography';
+import { ThemeLogo } from '@/theme/components/theme-logo';
 import { ArrowRight, Box, ShieldCheck, Zap, Factory, Landmark, Lock, PackageCheck, ShoppingCart, Users } from 'lucide-react';
 // import { motion } from 'framer-motion'; 
 // Note: Framer Motion requires "use client" so we will skip it for the main server component or create a client wrapper.
@@ -118,7 +119,14 @@ export default function LandingPage() {
       {/* Footer */}
       <footer className="w-full bg-surface border-t border-border mt-auto">
         <div className="max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-center gap-6">
-          <Typography variant="h3" className="text-foreground m-0 tracking-tighter">NEXIN</Typography>
+          <div className="h-8 flex items-center justify-center">
+            <ThemeLogo 
+              lightSrc="/nexin-logos/svg/nexin-text-coloured-b.svg"
+              darkSrc="/nexin-logos/svg/nexin-text-coloured-w.svg"
+              alt="Nexin"
+              className="h-full w-auto"
+            />
+          </div>
           <Typography variant="muted" className="m-0 text-center">{t('Footer.rights')}</Typography>
           <Button variant="outlined" size="sm" icon={ArrowRight}>
             {t('Footer.contact')}
