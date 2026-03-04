@@ -23,6 +23,24 @@
     "procurement": "Abastecimiento y compras.",
     "vendor": "Portal de proveedores."
   },
+  "Navbar": {
+    "apps": "Aplicaciones",
+    "guardian_desc": "Seguridad y control de acceso",
+    "factory_desc": "Gestión de piso de producción",
+    "finance_desc": "Contabilidad e impuestos",
+    "logistic_desc": "Inventario y envíos",
+    "procurement_desc": "Compras a proveedores",
+    "vendor_desc": "Portal de proveedores"
+  },
+  "Settings": {
+    "title": "Configuración",
+    "theme": "Apariencia",
+    "language": "Idioma",
+    "theme_light": "Claro",
+    "theme_dark": "Oscuro",
+    "theme_system": "Sistema",
+    "back": "Atrás"
+  },
   "Footer": {
     "cta": "The next generation of manufacturing and business OS.",
     "contact": "Contactar Ventas",

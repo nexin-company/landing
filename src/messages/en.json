@@ -23,6 +23,24 @@
     "procurement": "Sourcing and purchasing.",
     "vendor": "Supplier portal."
   },
+  "Navbar": {
+    "apps": "Applications",
+    "guardian_desc": "Security and access control",
+    "factory_desc": "Shop floor management",
+    "finance_desc": "Accounting & taxes",
+    "logistic_desc": "Inventory and shipping",
+    "procurement_desc": "Sourcing and purchasing",
+    "vendor_desc": "Supplier portal"
+  },
+  "Settings": {
+    "title": "Settings",
+    "theme": "Appearance",
+    "language": "Language",
+    "theme_light": "Light",
+    "theme_dark": "Dark",
+    "theme_system": "System",
+    "back": "Back"
+  },
   "Footer": {
     "cta": "The next generation of manufacturing and business OS.",
     "contact": "Contact Sales",

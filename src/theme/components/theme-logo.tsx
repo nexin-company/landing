@@ -3,17 +3,18 @@
 import * as React from "react";
 import { useTheme } from "next-themes";
 import Image from "next/image";
+import { Box } from "./box";
 
-export function ThemeLogo({ 
-  lightSrc, 
-  darkSrc, 
-  alt, 
-  className 
-}: { 
-  lightSrc: string; 
-  darkSrc: string; 
-  alt: string; 
-  className?: string; 
+export function ThemeLogo({
+  lightSrc,
+  darkSrc,
+  alt,
+  className,
+}: {
+  lightSrc: string;
+  darkSrc: string;
+  alt: string;
+  className?: string;
 }) {
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = React.useState(false);
@@ -24,16 +25,10 @@ export function ThemeLogo({
 
   if (!mounted) {
     // Renderea un placeholder transparente o el logo por defecto para evitar layout shift drástico
-    return <div className={className} style={{ opacity: 0 }} />;
+    return <Box className={className} style={{ opacity: 0 }} />;
   }
 
   const src = resolvedTheme === "dark" ? darkSrc : lightSrc;
 
-  return (
-    <img 
-      src={src} 
-      alt={alt} 
-      className={className} 
-    />
-  );
+  return <img src={src} alt={alt} className={className} />;
 }

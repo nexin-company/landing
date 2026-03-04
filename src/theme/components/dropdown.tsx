@@ -3,6 +3,8 @@
 import * as React from "react";
 import { cn } from "@/lib/utils";
 import { ChevronDown } from "lucide-react";
+import { Box } from "./box";
+import { Button } from "./button";
 
 interface DropdownItem {
   label: string | React.ReactNode;
@@ -28,11 +30,14 @@ export function Dropdown({
   className,
 }: DropdownProps) {
   const [isOpen, setIsOpen] = React.useState(false);
-  const dropdownRef = React.useRef<HTMLDivElement>(null);
+  const dropdownRef = React.useRef<HTMLElement>(null);
 
   React.useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
         setIsOpen(false);
       }
     }
@@ -43,24 +48,34 @@ export function Dropdown({
   const selectedItem = items.find((item) => item.value === value) || items[0];
 
   return (
-    <div className={cn("relative inline-block text-left", className)} ref={dropdownRef}>
-      <button
+    <Box
+      className={cn("relative inline-block text-left", className)}
+      ref={dropdownRef}
+    >
+      <Button
+        variant="unstyled"
+        size="none"
         type="button"
         onClick={() => setIsOpen(!isOpen)}
         className="inline-flex justify-between items-center w-full h-10 rounded-md border border-border bg-surface px-3 py-2 text-sm font-medium text-foreground shadow-sm hover:bg-white/5 focus:outline-none cursor-pointer disabled:cursor-not-allowed"
       >
-        <div className="flex items-center gap-2">
+        <Box className="flex items-center gap-2">
           {triggerIcon || selectedItem?.icon}
           {triggerLabel || selectedItem?.label}
-        </div>
-        <ChevronDown className="ml-2 -mr-1 h-4 w-4 text-muted-foreground" aria-hidden="true" />
-      </button>
+        </Box>
+        <ChevronDown
+          className="ml-2 -mr-1 h-4 w-4 text-muted-foreground"
+          aria-hidden="true"
+        />
+      </Button>
 
       {isOpen && (
-        <div className="absolute right-0 z-50 mt-2 w-48 origin-top-right rounded-md bg-surface shadow-lg border border-border ring-1 ring-black ring-opacity-5 focus:outline-none overflow-hidden">
-          <div className="py-1">
+        <Box className="absolute right-0 z-50 mt-2 w-48 origin-top-right rounded-md bg-surface shadow-lg border border-border ring-1 ring-black ring-opacity-5 focus:outline-none overflow-hidden">
+          <Box className="py-1">
             {items.map((item) => (
-              <button
+              <Button
+                variant="unstyled"
+                size="none"
                 key={item.value}
                 onClick={() => {
                   onChange(item.value);
@@ -68,16 +83,18 @@ export function Dropdown({
                 }}
                 className={cn(
                   "flex w-full items-center gap-2 px-4 py-2 text-sm text-left hover:bg-white/10 transition-colors cursor-pointer",
-                  value === item.value ? "bg-white/5 font-semibold text-primary" : "text-foreground"
+                  value === item.value
+                    ? "bg-white/5 font-semibold text-primary"
+                    : "text-foreground",
                 )}
               >
                 {item.icon}
                 {item.label}
-              </button>
+              </Button>
             ))}
-          </div>
-        </div>
+          </Box>
+        </Box>
       )}
-    </div>
+    </Box>
   );
 }
