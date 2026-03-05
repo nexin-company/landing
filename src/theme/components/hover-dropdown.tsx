@@ -14,6 +14,7 @@ interface HoverDropdownItem {
   icon?: React.ReactNode;
   href?: string;
   description?: string;
+  hoverColorClass?: string;
 }
 
 interface HoverDropdownProps {
@@ -51,14 +52,19 @@ export function HoverDropdown({
         variant="unstyled"
         size="none"
         type="button"
-        className="inline-flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors focus:outline-none cursor-pointer"
+        className={cn(
+          "inline-flex items-center gap-1.5 transition-colors focus:outline-none cursor-pointer group",
+          isOpen ? "text-primary" : "text-foreground hover:text-primary",
+        )}
         aria-expanded={isOpen}
       >
         {triggerLabel}
         <ChevronDown
           className={cn(
-            "h-4 w-4 text-muted-foreground transition-transform duration-200",
-            isOpen && "rotate-180",
+            "h-4 w-4 transition-transform duration-200",
+            isOpen
+              ? "rotate-180 text-primary"
+              : "text-muted-foreground group-hover:text-primary",
           )}
           aria-hidden="true"
         />
@@ -94,7 +100,11 @@ export function HoverDropdown({
                 <Typography
                   variant="subtitle"
                   size="md"
-                  className="font-medium text-foreground group-hover:text-primary transition-colors"
+                  className={cn(
+                    "font-medium transition-colors",
+                    item.hoverColorClass ||
+                      "text-foreground group-hover:text-primary",
+                  )}
                 >
                   {item.label}
                 </Typography>

@@ -30,5 +30,14 @@ export function ThemeLogo({
 
   const src = resolvedTheme === "dark" ? darkSrc : lightSrc;
 
-  return <img src={src} alt={alt} className={className} />;
+  return (
+    <Image
+      src={src}
+      alt={alt}
+      className={className}
+      width={120}
+      height={32}
+      priority
+    />
+  );
 }

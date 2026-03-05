@@ -1,12 +1,12 @@
 {
   "Index": {
     "title": "El control total de tu industria, módulo a módulo",
-    "subtitle": "Nexin (Next Industries) es el ecosistema digital definitivo para el sector industrial en el Bajío. Robusto, escalable y del futuro.",
-    "cta_primary": "Explorar el Ecosistema",
+    "subtitle": "Nexin (Next Industries) es el sistema de módulos definitivo para el sector industrial. Robusto, escalable y del futuro.",
+    "cta_primary": "Explorar los Módulos",
     "cta_secondary": "Conocer más"
   },
   "Features": {
-    "title": "Pilares del Ecosistema",
+    "title": "Pilares de nuestros Módulos",
     "feature1_title": "Arquitectura Desacoplada",
     "feature1_desc": "Módulos que funcionan de manera independiente pero se comunican perfectamente.",
     "feature2_title": "Seguridad Central (Guardian)",
@@ -16,6 +16,7 @@
   },
   "Modules": {
     "title": "Nuestros Sistemas",
+    "collector": "Extracción de datos nivel 2 (PLC/HMI).",
     "factory": "Control de producción y piso.",
     "finance": "Administración financiera inteligente.",
     "guardian": "El cerebro de seguridad y accesos.",
@@ -24,13 +25,18 @@
     "vendor": "Portal de proveedores."
   },
   "Navbar": {
-    "apps": "Aplicaciones",
+    "apps": "Módulos",
     "guardian_desc": "Seguridad y control de acceso",
+    "collector_desc": "Almacenamiento y explotación de OT",
     "factory_desc": "Gestión de piso de producción",
     "finance_desc": "Contabilidad e impuestos",
     "logistic_desc": "Inventario y envíos",
     "procurement_desc": "Compras a proveedores",
-    "vendor_desc": "Portal de proveedores"
+    "vendor_desc": "Portal de proveedores",
+    "about": "Nosotros",
+    "services": "Servicios",
+    "cases": "Casos de Éxito",
+    "contact": "Contacto"
   },
   "Settings": {
     "title": "Configuración",

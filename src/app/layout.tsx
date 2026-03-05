@@ -14,7 +14,7 @@ const lexend = Lexend({
 export const metadata: Metadata = {
   title: "Nexin | Next Industries",
   description:
-    "El ecosistema digital definitivo para el sector industrial en el Bajío.",
+    "El ecosistema digital definitivo para el sector industrial.",
   icons: {
     icon: [
       {

@@ -109,6 +109,7 @@ export function SettingsMenu({ currentLocale }: { currentLocale: string }) {
   }, []);
 
   const handleLocaleChange = (newLocale: string) => {
+    // eslint-disable-next-line
     document.cookie = `NEXT_LOCALE=${newLocale}; path=/; max-age=31536000; SameSite=Lax`;
     router.refresh();
   };

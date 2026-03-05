@@ -7,6 +7,7 @@ import { Box } from "@/theme/components/box";
 import {
   ArrowRight,
   Box as BoxIcon,
+  Database,
   ShieldCheck,
   Zap,
   Factory,
@@ -55,14 +56,16 @@ export default function LandingPage() {
             variant="filled"
             size="lg"
             icon={Zap}
+            color="primary"
             className="w-full sm:w-auto"
           >
             {t("Index.cta_primary")}
           </Button>
           <Button
-            variant="glass"
+            variant="outlined"
             size="lg"
             icon={ArrowRight}
+            color="secondary"
             className="w-full sm:w-auto"
           >
             {t("Index.cta_secondary")}
@@ -86,10 +89,11 @@ export default function LandingPage() {
 
           <Box className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <Card
-              variant="solid"
-              className="p-8 hover:border-primary/50 transition-colors"
+              variant="outlined"
+              color="info"
+              className="p-8 hover:border-info/50 transition-colors"
             >
-              <BoxIcon className="w-10 h-10 text-primary mb-6" />
+              <BoxIcon className="w-10 h-10 text-info mb-6" />
               <Typography
                 variant="title"
                 size="sm"
@@ -103,8 +107,9 @@ export default function LandingPage() {
             </Card>
 
             <Card
-              variant="solid"
-              className="p-8 hover:border-primary/50 transition-colors"
+              variant="outlined"
+              color="success"
+              className="p-8 hover:border-success/50 transition-colors"
             >
               <ShieldCheck className="w-10 h-10 text-success mb-6" />
               <Typography
@@ -120,8 +125,9 @@ export default function LandingPage() {
             </Card>
 
             <Card
-              variant="solid"
-              className="p-8 hover:border-primary/50 transition-colors"
+              variant="outlined"
+              color="warning"
+              className="p-8 hover:border-warning/50 transition-colors"
             >
               <Zap className="w-10 h-10 text-warning mb-6" />
               <Typography
@@ -152,14 +158,11 @@ export default function LandingPage() {
         <Box className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-[200px]">
           {/* Guardian - Highlighted */}
           <Card
-            variant="glass"
-            className="p-6 md:col-span-2 md:row-span-2 flex flex-col justify-end relative overflow-hidden group hover:border-primary/50 transition-colors"
+            variant="filled"
+            className="p-6 md:col-span-2 md:row-span-2 flex flex-col justify-end relative overflow-hidden group transition-colors bg-guardian/10 border-guardian"
           >
-            {/* Background Blob/Gradient Fix */}
-            <Box className="absolute inset-0 bg-gradient-to-tr from-black/40 via-transparent to-primary/10 pointer-events-none" />
-
-            <Box className="absolute top-6 right-6 p-4 bg-white/5 rounded-2xl backdrop-blur-xl border border-white/10 group-hover:scale-105 transition-transform z-10">
-              <Lock className="w-12 h-12 text-primary" />
+            <Box className="absolute top-6 left-6">
+              <Lock className="w-12 h-12 text-guardian" />
             </Box>
             <Typography
               variant="title"
@@ -178,10 +181,27 @@ export default function LandingPage() {
           </Card>
 
           <Card
-            variant="solid"
-            className="p-6 flex flex-col justify-end group hover:border-primary/30 transition-colors"
+            variant="filled"
+            className="p-6 md:col-span-2 flex flex-col justify-end group transition-colors bg-collector/10 border-collector"
           >
-            <Factory className="w-8 h-8 text-info mb-auto" />
+            <Database className="w-8 h-8 text-collector mb-auto" />
+            <Typography
+              variant="title"
+              size="sm"
+              className="mb-2 text-foreground"
+            >
+              Collector
+            </Typography>
+            <Typography variant="subtitle" color="muted" className="m-0">
+              {t("Modules.collector")}
+            </Typography>
+          </Card>
+
+          <Card
+            variant="filled"
+            className="p-6 md:col-span-2 flex flex-col justify-end group transition-colors bg-factory/10 border-factory"
+          >
+            <Factory className="w-8 h-8 text-factory mb-auto" />
             <Typography
               variant="title"
               size="sm"
@@ -189,21 +209,16 @@ export default function LandingPage() {
             >
               Factory
             </Typography>
-            <Typography
-              variant="subtitle"
-              size="sm"
-              color="muted"
-              className="m-0"
-            >
+            <Typography variant="subtitle" color="muted" className="m-0">
               {t("Modules.factory")}
             </Typography>
           </Card>
 
           <Card
-            variant="solid"
-            className="p-6 flex flex-col justify-end group hover:border-primary/30 transition-colors"
+            variant="filled"
+            className="p-6 flex flex-col justify-end group transition-colors bg-finance/10 border-finance"
           >
-            <Landmark className="w-8 h-8 text-success mb-auto" />
+            <Landmark className="w-8 h-8 text-finance mb-auto" />
             <Typography
               variant="title"
               size="sm"
@@ -211,21 +226,16 @@ export default function LandingPage() {
             >
               Finance
             </Typography>
-            <Typography
-              variant="subtitle"
-              size="sm"
-              color="muted"
-              className="m-0"
-            >
+            <Typography variant="subtitle" color="muted" className="m-0">
               {t("Modules.finance")}
             </Typography>
           </Card>
 
           <Card
-            variant="solid"
-            className="p-6 md:col-span-2 flex flex-col justify-end group hover:border-primary/30 transition-colors"
+            variant="filled"
+            className="p-6 flex flex-col justify-end group transition-colors bg-logistic/10 border-logistic"
           >
-            <PackageCheck className="w-8 h-8 text-warning mb-auto" />
+            <PackageCheck className="w-8 h-8 text-logistic mb-auto" />
             <Typography
               variant="title"
               size="sm"
@@ -233,21 +243,16 @@ export default function LandingPage() {
             >
               Logistic
             </Typography>
-            <Typography
-              variant="subtitle"
-              size="sm"
-              color="muted"
-              className="m-0"
-            >
+            <Typography variant="subtitle" color="muted" className="m-0">
               {t("Modules.logistic")}
             </Typography>
           </Card>
 
           <Card
-            variant="solid"
-            className="p-6 flex flex-col justify-end group hover:border-primary/30 transition-colors"
+            variant="filled"
+            className="p-6 flex flex-col justify-end group transition-colors bg-procurement/10 border-procurement"
           >
-            <ShoppingCart className="w-8 h-8 text-secondary-foreground mb-auto" />
+            <ShoppingCart className="w-8 h-8 text-procurement mb-auto" />
             <Typography
               variant="title"
               size="sm"
@@ -255,21 +260,16 @@ export default function LandingPage() {
             >
               Procurement
             </Typography>
-            <Typography
-              variant="subtitle"
-              size="sm"
-              color="muted"
-              className="m-0"
-            >
+            <Typography variant="subtitle" color="muted" className="m-0">
               {t("Modules.procurement")}
             </Typography>
           </Card>
 
           <Card
-            variant="solid"
-            className="p-6 flex flex-col justify-end group hover:border-primary/30 transition-colors"
+            variant="filled"
+            className="p-6 flex flex-col justify-end group transition-colors bg-vendor/10 border-vendor"
           >
-            <Users className="w-8 h-8 text-muted-foreground mb-auto" />
+            <Users className="w-8 h-8 text-vendor mb-auto" />
             <Typography
               variant="title"
               size="sm"
@@ -277,12 +277,7 @@ export default function LandingPage() {
             >
               Vendor
             </Typography>
-            <Typography
-              variant="subtitle"
-              size="sm"
-              color="muted"
-              className="m-0"
-            >
+            <Typography variant="subtitle" color="muted" className="m-0">
               {t("Modules.vendor")}
             </Typography>
           </Card>

@@ -1,12 +1,12 @@
 {
   "Index": {
     "title": "Total control of your industry, module by module",
-    "subtitle": "Nexin (Next Industries) is the definitive digital ecosystem for the industrial sector. Robust, scalable, and from the future.",
-    "cta_primary": "Explore the Ecosystem",
+    "subtitle": "Nexin (Next Industries) is the definitive digital modular system for the industrial sector. Robust, scalable, and from the future.",
+    "cta_primary": "Explore our Modules",
     "cta_secondary": "Learn more"
   },
   "Features": {
-    "title": "Ecosystem Pillars",
+    "title": "Module Pillars",
     "feature1_title": "Decoupled Architecture",
     "feature1_desc": "Modules that work independently but communicate perfectly.",
     "feature2_title": "Central Security (Guardian)",
@@ -16,6 +16,7 @@
   },
   "Modules": {
     "title": "Our Systems",
+    "collector": "OT data extraction (PLC/HMI).",
     "factory": "Production and shop floor control.",
     "finance": "Smart financial administration.",
     "guardian": "The security and access brain.",
@@ -24,13 +25,18 @@
     "vendor": "Supplier portal."
   },
   "Navbar": {
-    "apps": "Applications",
+    "apps": "Modules",
     "guardian_desc": "Security and access control",
+    "collector_desc": "OT data storage & exploitation",
     "factory_desc": "Shop floor management",
     "finance_desc": "Accounting & taxes",
     "logistic_desc": "Inventory and shipping",
     "procurement_desc": "Sourcing and purchasing",
-    "vendor_desc": "Supplier portal"
+    "vendor_desc": "Supplier portal",
+    "about": "About Us",
+    "services": "Services",
+    "cases": "Case Studies",
+    "contact": "Contact"
   },
   "Settings": {
     "title": "Settings",

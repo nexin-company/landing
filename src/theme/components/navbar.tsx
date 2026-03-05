@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { SettingsMenu } from "./settings-menu";
 import { HoverDropdown } from "./hover-dropdown";
@@ -9,6 +10,7 @@ import { Box } from "./box";
 import { Button } from "./button";
 import { Typography } from "./typography";
 import {
+  Database,
   Factory,
   Landmark,
   Lock,
@@ -64,38 +66,51 @@ export function Navbar({ locale }: { locale: string }) {
     {
       label: "Guardian",
       value: "guardian",
-      icon: <Lock className="w-4 h-4 text-primary" />,
+      icon: <Lock className="w-4 h-4 text-guardian" />,
       description: t("guardian_desc"),
+      hoverColorClass: "group-hover:text-guardian",
+    },
+    {
+      label: "Collector",
+      value: "collector",
+      icon: <Database className="w-4 h-4 text-collector" />,
+      description: t("collector_desc"),
+      hoverColorClass: "group-hover:text-collector",
     },
     {
       label: "Factory",
       value: "factory",
-      icon: <Factory className="w-4 h-4 text-info" />,
+      icon: <Factory className="w-4 h-4 text-factory" />,
       description: t("factory_desc"),
+      hoverColorClass: "group-hover:text-factory",
     },
     {
       label: "Finance",
       value: "finance",
-      icon: <Landmark className="w-4 h-4 text-success" />,
+      icon: <Landmark className="w-4 h-4 text-finance" />,
       description: t("finance_desc"),
+      hoverColorClass: "group-hover:text-finance",
     },
     {
       label: "Logistic",
       value: "logistic",
-      icon: <PackageCheck className="w-4 h-4 text-warning" />,
+      icon: <PackageCheck className="w-4 h-4 text-logistic" />,
       description: t("logistic_desc"),
+      hoverColorClass: "group-hover:text-logistic",
     },
     {
       label: "Procurement",
       value: "procurement",
-      icon: <ShoppingCart className="w-4 h-4 text-secondary-foreground" />,
+      icon: <ShoppingCart className="w-4 h-4 text-procurement" />,
       description: t("procurement_desc"),
+      hoverColorClass: "group-hover:text-procurement",
     },
     {
       label: "Vendor",
       value: "vendor",
-      icon: <Users className="w-4 h-4 text-muted-foreground" />,
+      icon: <Users className="w-4 h-4 text-vendor" />,
       description: t("vendor_desc"),
+      hoverColorClass: "group-hover:text-vendor",
     },
   ];
 
@@ -111,28 +126,68 @@ export function Navbar({ locale }: { locale: string }) {
             href="/"
             className="h-6 md:h-7 flex-shrink-0 flex items-center relative"
           >
-            <img
+            <Image
               src="/nexin-logos/svg/nexin-logo-icon.svg"
               alt="Nexin"
+              width={28}
+              height={28}
               className="h-full w-auto"
+              priority
             />
             <span className="sr-only">Nexin</span>
           </Link>
 
-          {/* Apps Menu (for Desktop/Tablet) */}
-          <Box className="hidden md:flex ml-4">
+          {/* Apps Menu and Links (for Desktop/Tablet) */}
+          <Box className="hidden md:flex ml-4 gap-6 items-center">
             <HoverDropdown
               items={apps}
               triggerLabel={
                 <Typography
                   variant="subtitle"
                   size="md"
-                  className="font-semibold text-foreground"
+                  className="font-medium text-inherit"
                 >
                   {t("apps")}
                 </Typography>
               }
             />
+            {/* Additional Corporate Links */}
+            <Link href="#about">
+              <Typography
+                variant="subtitle"
+                size="md"
+                className="font-medium text-foreground hover:text-primary transition-colors"
+              >
+                {t("about")}
+              </Typography>
+            </Link>
+            <Link href="#services">
+              <Typography
+                variant="subtitle"
+                size="md"
+                className="font-medium text-foreground hover:text-primary transition-colors"
+              >
+                {t("services")}
+              </Typography>
+            </Link>
+            <Link href="#cases">
+              <Typography
+                variant="subtitle"
+                size="md"
+                className="font-medium text-foreground hover:text-primary transition-colors"
+              >
+                {t("cases")}
+              </Typography>
+            </Link>
+            <Link href="#contact">
+              <Typography
+                variant="subtitle"
+                size="md"
+                className="font-medium text-foreground hover:text-primary transition-colors"
+              >
+                {t("contact")}
+              </Typography>
+            </Link>
           </Box>
         </Box>
 
@@ -172,17 +227,21 @@ export function Navbar({ locale }: { locale: string }) {
                 <Link
                   key={app.value}
                   href="#"
-                  className="flex items-center gap-3 p-3 text-left rounded-lg hover:bg-muted/50 transition-colors"
+                  className="flex items-center gap-3 p-3 text-left rounded-lg hover:bg-muted/50 transition-colors group"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  <Box className="flex-shrink-0 w-8 h-8 rounded-md bg-background flex items-center justify-center border border-border/50 shadow-sm">
+                  <Box className="flex-shrink-0 w-8 h-8 rounded-md bg-background flex items-center justify-center border border-border/50 shadow-sm transition-transform group-hover:scale-105">
                     {app.icon}
                   </Box>
                   <Box className="flex flex-col">
                     <Typography
                       variant="subtitle"
                       size="md"
-                      className="font-medium text-foreground"
+                      className={cn(
+                        "font-medium transition-colors",
+                        app.hoverColorClass ||
+                          "text-foreground group-hover:text-primary",
+                      )}
                     >
                       {app.label}
                     </Typography>
@@ -192,6 +251,62 @@ export function Navbar({ locale }: { locale: string }) {
                   </Box>
                 </Link>
               ))}
+            </Box>
+
+            {/* Mobile Corporate Links */}
+            <Box className="grid grid-cols-1 gap-1 border-t border-border/50 pt-2">
+              <Link
+                href="#about"
+                className="p-3 rounded-lg hover:bg-muted/50 transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <Typography
+                  variant="subtitle"
+                  size="md"
+                  className="font-medium text-foreground"
+                >
+                  {t("about")}
+                </Typography>
+              </Link>
+              <Link
+                href="#services"
+                className="p-3 rounded-lg hover:bg-muted/50 transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <Typography
+                  variant="subtitle"
+                  size="md"
+                  className="font-medium text-foreground"
+                >
+                  {t("services")}
+                </Typography>
+              </Link>
+              <Link
+                href="#cases"
+                className="p-3 rounded-lg hover:bg-muted/50 transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <Typography
+                  variant="subtitle"
+                  size="md"
+                  className="font-medium text-foreground"
+                >
+                  {t("cases")}
+                </Typography>
+              </Link>
+              <Link
+                href="#contact"
+                className="p-3 rounded-lg hover:bg-muted/50 transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <Typography
+                  variant="subtitle"
+                  size="md"
+                  className="font-medium text-foreground"
+                >
+                  {t("contact")}
+                </Typography>
+              </Link>
             </Box>
 
             {/* Mobile Settings */}
