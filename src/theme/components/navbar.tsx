@@ -152,40 +152,31 @@ export function Navbar({ locale }: { locale: string }) {
               }
             />
             {/* Additional Corporate Links */}
-            <Link href="#about">
+            <Link href="#docs">
               <Typography
                 variant="subtitle"
                 size="md"
                 className="font-medium text-foreground hover:text-primary transition-colors"
               >
-                {t("about")}
+                {t("docs")}
               </Typography>
             </Link>
-            <Link href="#services">
+            <Link href="#pricing">
               <Typography
                 variant="subtitle"
                 size="md"
                 className="font-medium text-foreground hover:text-primary transition-colors"
               >
-                {t("services")}
+                {t("pricing")}
               </Typography>
             </Link>
-            <Link href="#cases">
+            <Link href="#company">
               <Typography
                 variant="subtitle"
                 size="md"
                 className="font-medium text-foreground hover:text-primary transition-colors"
               >
-                {t("cases")}
-              </Typography>
-            </Link>
-            <Link href="#contact">
-              <Typography
-                variant="subtitle"
-                size="md"
-                className="font-medium text-foreground hover:text-primary transition-colors"
-              >
-                {t("contact")}
+                {t("company")}
               </Typography>
             </Link>
           </Box>
@@ -256,7 +247,7 @@ export function Navbar({ locale }: { locale: string }) {
             {/* Mobile Corporate Links */}
             <Box className="grid grid-cols-1 gap-1 border-t border-border/50 pt-2">
               <Link
-                href="#about"
+                href="#docs"
                 className="p-3 rounded-lg hover:bg-muted/50 transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
@@ -265,11 +256,11 @@ export function Navbar({ locale }: { locale: string }) {
                   size="md"
                   className="font-medium text-foreground"
                 >
-                  {t("about")}
+                  {t("docs")}
                 </Typography>
               </Link>
               <Link
-                href="#services"
+                href="#pricing"
                 className="p-3 rounded-lg hover:bg-muted/50 transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
@@ -278,11 +269,11 @@ export function Navbar({ locale }: { locale: string }) {
                   size="md"
                   className="font-medium text-foreground"
                 >
-                  {t("services")}
+                  {t("pricing")}
                 </Typography>
               </Link>
               <Link
-                href="#cases"
+                href="#company"
                 className="p-3 rounded-lg hover:bg-muted/50 transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
@@ -291,20 +282,7 @@ export function Navbar({ locale }: { locale: string }) {
                   size="md"
                   className="font-medium text-foreground"
                 >
-                  {t("cases")}
-                </Typography>
-              </Link>
-              <Link
-                href="#contact"
-                className="p-3 rounded-lg hover:bg-muted/50 transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                <Typography
-                  variant="subtitle"
-                  size="md"
-                  className="font-medium text-foreground"
-                >
-                  {t("contact")}
+                  {t("company")}
                 </Typography>
               </Link>
             </Box>

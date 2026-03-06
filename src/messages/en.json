@@ -25,7 +25,7 @@
     "vendor": "Supplier portal."
   },
   "Navbar": {
-    "apps": "Modules",
+    "apps": "Solutions",
     "guardian_desc": "Security and access control",
     "collector_desc": "OT data storage & exploitation",
     "factory_desc": "Shop floor management",
@@ -33,10 +33,9 @@
     "logistic_desc": "Inventory and shipping",
     "procurement_desc": "Sourcing and purchasing",
     "vendor_desc": "Supplier portal",
-    "about": "About Us",
-    "services": "Services",
-    "cases": "Case Studies",
-    "contact": "Contact"
+    "docs": "Docs",
+    "pricing": "Pricing",
+    "company": "Company"
   },
   "Settings": {
     "title": "Settings",

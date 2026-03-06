@@ -25,7 +25,7 @@
     "vendor": "Portal de proveedores."
   },
   "Navbar": {
-    "apps": "Módulos",
+    "apps": "Soluciones",
     "guardian_desc": "Seguridad y control de acceso",
     "collector_desc": "Almacenamiento y explotación de OT",
     "factory_desc": "Gestión de piso de producción",
@@ -33,10 +33,9 @@
     "logistic_desc": "Inventario y envíos",
     "procurement_desc": "Compras a proveedores",
     "vendor_desc": "Portal de proveedores",
-    "about": "Nosotros",
-    "services": "Servicios",
-    "cases": "Casos de Éxito",
-    "contact": "Contacto"
+    "docs": "Documentación",
+    "pricing": "Precios",
+    "company": "Empresa"
   },
   "Settings": {
     "title": "Configuración",
